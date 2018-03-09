@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">MLExamen</string>
+    <string name="amount">Monto</string>
+    <string name="accept">Aceptar</string>
+    <string name="cancel">Cancelar</string>
+    <string name="payment_method">Medio de pago</string>
+    <string name="bank">Banco</string>
+    <string name="recommended_message">Cuotas</string>
+    <string name="importe">Importe: $ </string>
+</resources>
