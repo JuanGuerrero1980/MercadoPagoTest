@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
@@ -44,7 +45,7 @@ public class BankActivity extends AppCompatActivity implements BankContract.View
         binding.list.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
         binding.list.setLayoutManager(new LinearLayoutManager(this));
         binding.list.setAdapter(adapter);
-        payment_method_id = getIntent().getStringExtra(KEY_PAYMENT_METHOD_ID);
+
     }
 
     private View.OnClickListener onListClick = new View.OnClickListener(){
@@ -64,6 +65,7 @@ public class BankActivity extends AppCompatActivity implements BankContract.View
     @Override
     protected void onStart() {
         super.onStart();
+        payment_method_id = getIntent().getStringExtra(KEY_PAYMENT_METHOD_ID);
         getPresenter().start();
     }
 
@@ -98,6 +100,18 @@ public class BankActivity extends AppCompatActivity implements BankContract.View
     @Override
     public void getData(List<CardIssuers> list) {
         adapter.setData(list);
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
     @Override

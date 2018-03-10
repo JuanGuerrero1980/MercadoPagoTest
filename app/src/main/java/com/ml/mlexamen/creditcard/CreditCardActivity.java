@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
@@ -93,6 +94,16 @@ public class CreditCardActivity extends AppCompatActivity implements CreditCardC
     @Override
     public void getData(List<PaymentMethod> list) {
         paymentMethodAdapter.setData(list);
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
     @Override

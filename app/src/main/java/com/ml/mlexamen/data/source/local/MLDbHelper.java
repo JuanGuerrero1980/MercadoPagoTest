@@ -12,7 +12,7 @@ public class MLDbHelper extends SQLiteOpenHelper {
 
     public static final int DATABASE_VERSION = 1;
 
-    public static final String DATABASE_NAME = "Ethics.db";
+    public static final String DATABASE_NAME = "mercado_pago.db";
 
     private static final String TEXT_TYPE = " TEXT";
 
